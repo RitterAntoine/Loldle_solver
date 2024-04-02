@@ -21,14 +21,17 @@ Species = ["Human", "Yordle", "Vastayan", "Magicborn",
            "Darkin", "Minotaur", "Undead", "God", 
            "Spirit", "Spiritualist", "Iceborn", 
            "Celestial", "Dragon", "God-Warrior" ,"Void-Being",
-           "Golem", "Magically Altered", "Cyborg"]
-Resources = ["Mana", "Energy", "Manaless", "Health costs"]
+           "Golem", "Magically Altered", "Cyborg",
+           "Aspect", "Chemically Altered", "Demon",
+           "Unknown", "Troll", "Rat"]
+Resources = ["Mana", "Energy", "Manaless", "Health costs",
+            "Rage", "Courage", "Ferocity", "Heat", "Fury", "Flow",]
 RangeTypes = ["Melee", "Ranged"]
 Regions = ["Demacia", "Noxus", "Ionia", "Zaun", 
            "Freljord", "Targon", "Bilgewater", 
            "Shadow Isles", "Shurima", "Ixtal", 
            "Runeterra", "Bandle City", "Void",
-           "Piltover"]
+           "Piltover", "Camavor", "Icathia",]
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -99,10 +102,28 @@ def get_user_input(prompt, options, multiple=False):
         else:
             print("Invalid input. Please choose a valid option.")
 
+def champion_exists(champion_name):
+    # Load the JSON file
+    with open('champions.json', 'r') as f:
+        champions = json.load(f)
+
+    # Check if the champion is in the list
+    for champion in champions:
+        if champion["Champion"].lower() == champion_name.lower():
+            return True
+
+    return False
+
 def enter_new_entry():
     new_entry = {}
     clear_screen()
-    new_entry["Champion"] = input("Enter Champion: ")
+    while True:
+        champion_name = input("Enter Champion: ")
+        if not champion_exists(champion_name):
+            new_entry["Champion"] = champion_name
+            break
+        else:
+            print("This champion already exists. Please enter a different champion.")
     display_actual_champions(new_entry["Champion"])
     new_entry["Gender"] = get_user_input("Enter Gender", Genders)
     display_actual_champions(new_entry["Champion"])
