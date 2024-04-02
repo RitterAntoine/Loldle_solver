@@ -1,20 +1,6 @@
 import os
 import json
 
-
-# This program is a JSON manager that can read and write JSON files.
-# The format of the JSON file is as follows:
-# {
-#     "Champion": "value1",
-#     "Gender": "value2",
-#     "Position(s)": "value3",
-#     "Species": "value4",
-#     "Resource": "value5"
-#     "Range type": "value6"
-#     "Region(s)": "value7"
-#     "Release year": "value8"
-# }
-
 Genders = ["Male", "Female", "Other"]
 Positions = ["Top", "Jungle", "Middle", "Bottom", "Support"]
 Species = ["Human", "Yordle", "Vastayan", "Magicborn", 
@@ -23,9 +9,11 @@ Species = ["Human", "Yordle", "Vastayan", "Magicborn",
            "Celestial", "Dragon", "God-Warrior" ,"Void-Being",
            "Golem", "Magically Altered", "Cyborg",
            "Aspect", "Chemically Altered", "Demon",
-           "Unknown", "Troll", "Rat"]
+           "Unknown", "Troll", "Rat", "Cat", "Revenant",
+           "Dragon", "Brackern", "Yeti", "Dog"]
 Resources = ["Mana", "Energy", "Manaless", "Health costs",
-            "Rage", "Courage", "Ferocity", "Heat", "Fury", "Flow",]
+            "Rage", "Courage", "Ferocity", "Heat", "Fury",
+            "Flow", "Grit", "Shield", "Bloodthirst"]
 RangeTypes = ["Melee", "Ranged"]
 Regions = ["Demacia", "Noxus", "Ionia", "Zaun", 
            "Freljord", "Targon", "Bilgewater", 
@@ -144,14 +132,13 @@ def enter_new_entry():
 def main():
     file_name = "champions.json"
     while True:
-        # print("1. Read JSON file")
-        # print("2. Write JSON file")
-        # print("3. Add entry")
-        # print("4. Delete entry")
-        # print("5. Update entry")
-        # print("6. Exit")
-        # choice = int(input("Enter your choice: "))
-        choice = 3
+        print("1. Read JSON file")
+        print("2. Write JSON file")
+        print("3. Add entry")
+        print("4. Delete entry")
+        print("5. Update entry")
+        print("6. Exit")
+        choice = int(input("Enter your choice: "))
         if choice == 1:
             data = read_json_file(file_name)
             for entry in data:
