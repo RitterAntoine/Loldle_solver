@@ -2376,5 +2376,24 @@
             "Runeterra"
         ],
         "Release year": "2011"
+    },
+    {
+        "Champion": "Pantheon",
+        "Gender": "Male",
+        "Position(s)": [
+            "Middle",
+            "Support",
+            "Top"
+        ],
+        "Species": [
+            "Aspect",
+            "Human"
+        ],
+        "Resource": "Mana",
+        "Range type": "Melee",
+        "Region(s)": [
+            "Targon"
+        ],
+        "Release year": "2010"
     }
 ]
