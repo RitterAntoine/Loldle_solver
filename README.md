@@ -30,7 +30,7 @@ The Champion Guesser is a guessing game where the program tries to guess a Leagu
 python Champion_Guesser.py
 ```
 
-3. The program will guess a champion and ask for your feedback. You can respond with 'yes', 'no', 'higher', 'lower', or 'partial' for each field.
+3. The program will guess a champion and ask for your feedback. You can respond with 'y' for 'yes', 'n' for 'no', 'h' for 'higher', 'l' for 'lower', or 'p' for 'partial' for each field.
 
 4. The program will continue guessing until it correctly identifies the champion.
 
