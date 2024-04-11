@@ -18,16 +18,16 @@ The Champion Guesser is a guessing game where the program tries to guess a Leagu
 
 - `json_manager.py`: This script contains functions for loading the champions data from the `champions.json` file.
 
-- `Champion_Guesser.py`: This is the main script for the guessing game. It uses the data loaded by `json_manager.py` to guess a champion based on user feedback.
+- `Guesser.py`: This is the main script for the guessing game. It uses the data loaded by `json_manager.py` to guess a champion based on user feedback.
 
 ### How to Run
 
 1. Ensure you have Python installed on your machine.
 
-2. Run the `Champion_Guesser.py` script:
+2. Run the `Guesser.py` script:
 
 ```bash
-python Champion_Guesser.py
+python Guesser.py
 ```
 
 3. The program will guess a champion and ask for your feedback. You can respond with 'y' for 'yes', 'n' for 'no', 'h' for 'higher', 'l' for 'lower', or 'p' for 'partial' for each field.
