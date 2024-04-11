@@ -34,6 +34,36 @@ python Guesser.py
 
 4. The program will continue guessing until it correctly identifies the champion.
 
+## Algorithm Tester
+
+The `Algorithm_tester.py` script is used to test the effectiveness of the Champion Guesser. It runs the guessing algorithm on each champion multiple times and calculates the average number of guesses needed to correctly identify each champion.
+
+### How to Run
+
+1. Ensure you have Python installed on your machine.
+
+2. Run the `Algorithm_tester.py` script:
+
+```bash
+python Algorithm_tester.py
+```
+
+3. The script will run the guessing algorithm on each champion 100 times (this number can be adjusted in the script) and print out the average number of guesses needed for each champion.
+
+4. At the end, the script will print out the overall average number of guesses needed to guess all champions, as well as the total time taken to run the tests.
+
+### Understanding the Output
+
+The output of the Algorithm_tester.py script is structured as follows:
+
+- For each champion, the script prints the champion's name followed by the average number of guesses needed to guess that champion over the number of tests run.
+
+- After testing all champions, the script prints the overall average number of guesses needed to guess all champions.
+
+- Finally, the script prints the total time taken to run all the tests.
+
+This output can be used to evaluate the effectiveness of the guessing algorithm and identify areas for improvement.
+
 ## Future Work
 
 This project is a work in progress. Future components will add more functionality and depth to the Loldle Solver.
