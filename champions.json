@@ -2395,5 +2395,21 @@
             "Targon"
         ],
         "Release year": "2010"
+    },
+    {
+        "Champion": "Quinn",
+        "Gender": "Female",
+        "Position(s)": [
+            "Top"
+        ],
+        "Species": [
+            "Human"
+        ],
+        "Resource": "Mana",
+        "Range type": "Ranged",
+        "Region(s)": [
+            "Demacia"
+        ],
+        "Release year": "2013"
     }
 ]
