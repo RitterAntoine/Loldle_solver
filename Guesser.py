@@ -1,5 +1,6 @@
 import json
 import random
+import os
 
 # list of all the possible values for each field
 # These are used to initialize the probabilities
@@ -23,15 +24,32 @@ Regions = ["Demacia", "Noxus", "Ionia", "Zaun",
            "Runeterra", "Bandle City", "Void",
            "Piltover", "Camavor", "Icathia",]
 
+def create_specific_folder(folder_name):
+    """
+    Create a specific folder in the user's AppData Local directory.
+
+    Args:
+        folder_name (str): The name of the folder to create.
+    """
+    # Define the path of the new folder
+    new_folder_path = os.path.join(os.getenv('LOCALAPPDATA'), folder_name)
+
+    # Create the new folder if it doesn't already exist
+    if not os.path.exists(new_folder_path):
+        os.makedirs(new_folder_path)
+
 # Load the JSON file
 def load_champions():
     """
-    Load the champions data from a JSON file.
+    Load the champions data from a JSON file in the AppData Local directory.
 
     Returns:
         list: A list of dictionaries, where each dictionary contains the data for one champion.
     """
-    with open('champions.json', 'r') as f:
+    # Define the path of the JSON file
+    json_file_path = os.path.join(os.getenv('LOCALAPPDATA'), 'Loldle_Solver', 'champions.json')
+
+    with open(json_file_path, 'r') as f:
         champions = json.load(f)
     return champions
 
@@ -141,6 +159,7 @@ def main():
     champions based on the feedback, and updates the probabilities. The loop continues until
     there is only one champion left or the user confirms the guessed champion.
     """
+    create_specific_folder("Loldle_Solver")
     champions = load_champions()
     fields = {"Gender": Genders, "Position": Positions, "Species": Species, "Resource": Resources, "Range type": RangeTypes, "Region": Regions}
     probabilities = initialize_probabilities(champions, fields)
