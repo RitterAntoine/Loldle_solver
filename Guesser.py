@@ -151,7 +151,6 @@ def choose_most_probable_champion(champions, probabilities):
     most_probable_champions = [champion for champion in champions if scores[champion['Champion']] == max_score]
     return random.choice(most_probable_champions)
 
-# Main function
 def main():
     """
     The main function of the program. It loads the champions data, initializes the probabilities,
@@ -168,6 +167,7 @@ def main():
         feedback = get_user_feedback(guessed_champion)
         if feedback is True:
             print(f"The champion is: {guessed_champion['Champion']}")
+            input("Press any key to exit...")  # Add this line
             return
         champions = filter_champions(champions, feedback, guessed_champion)
         probabilities = update_probabilities(probabilities, champions, feedback)
@@ -175,6 +175,7 @@ def main():
         print(f"The champion is: {champions[0]['Champion']}")
     else:
         print("No matching champion found.")
+    input("Press any key to exit...")  # Add this line
 
 if __name__ == "__main__":
     main()

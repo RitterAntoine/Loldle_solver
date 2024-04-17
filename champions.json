@@ -2411,5 +2411,22 @@
             "Demacia"
         ],
         "Release year": "2013"
+    },
+    {
+        "Champion": "Ornn",
+        "Gender": "Male",
+        "Position(s)": [
+            "Top"
+        ],
+        "Species": [
+            "God",
+            "Spirit"
+        ],
+        "Resource": "Mana",
+        "Range type": "Melee",
+        "Region(s)": [
+            "Freljord"
+        ],
+        "Release year": "2017"
     }
 ]
